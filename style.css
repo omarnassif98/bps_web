@@ -1,0 +1,12 @@
+html body {
+    margin: 0;
+}
+
+#headerBar{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: cornflowerblue;
+    height: 6em;
+    padding: 2em;
+}
