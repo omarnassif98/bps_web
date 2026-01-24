@@ -1,12 +1,155 @@
-html body {
+:root{
+    --accent-colour: #b72270;
+    --alternate-background-colour: #f2f2f2;
+    --inset-padding: 7.5vw;
+    --content-width-unit: 30em;
+    font-family: 'Space Grotesk',Helvetica,Arial,Lucida,sans-serif;
+}
+
+html, body {
     margin: 0;
+}
+
+header, #content > .rowContainer, footer{
+    width: 100vw - 2 * var(--inset-padding);
+    padding: 0 var(--inset-padding);
 }
 
 #headerBar{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    background-color: cornflowerblue;
     height: 6em;
     padding: 2em;
+}
+
+img{
+    object-fit: contain;
+}
+
+nav{
+    display: flex;
+    flex-direction: row;
+    gap: 2em;
+    padding-bottom: .4em;
+    border-bottom: 1px var(--accent-colour) solid;
+    margin: auto;
+    margin-bottom: 4em;
+    overflow-x: scroll;
+}
+
+nav > a{
+    transition: .4s all;
+    text-decoration: none;
+    color: #666666e1;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+nav > a:hover{
+    color: var(--accent-colour);
+}
+
+nav > a.onpage{
+    color: var(--accent-colour);
+}
+
+h1, h2{
+    color: var(--accent-colour);
+    line-height: 1.1em;
+    margin: .1em;
+}
+
+h1{
+    font-weight: 700;
+}
+
+h2{
+    font-weight: 400;
+    padding-bottom: 1.5em;
+}
+h3{
+    font-size: 1.1em;
+}
+
+p {
+    font-family: Open Sans,Arial,sans-serif;
+    margin: 0;
+    padding-bottom: 1em;
+    color: #666;
+}
+
+h1 {
+    font-size: 1.4em;
+}
+
+h2 {
+    font-size: 1.2em;
+}
+
+#content{
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+}
+
+.rowContainer {
+    padding-top: .6em;
+    padding-bottom: .2em;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.rowContainer:nth-of-type(even) {
+    background-color: var(--alternate-background-colour);
+}
+
+#content > .rowContainer{
+    min-height: 12rem;
+    padding-bottom: 2em;
+    padding-top: 2em;
+}
+
+.contentContainer{
+    font-size: 0.9rem;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+#content > .rowContainer > .contentContainer {
+    max-width: var(--content-width-unit);
+}
+
+.simpleFlex{
+    display: flex;
+}
+
+button{
+    width: 10em;
+    padding: .3em;
+    border-radius: 1em;
+    border: none;
+    background-color: transparent;
+    outline: .15em solid var(--accent-colour);
+    color: var(--accent-colour);
+    font-size: .8em;
+    cursor: pointer;
+    transition: .4s all;
+}
+
+button:hover{
+    background-color: var(--accent-colour);
+    color: white;
+}
+
+footer{
+    padding-bottom: .05em;
+    padding-top: .05em;
+    font-size: 1em;
+    background-color: var(--accent-colour);
+}
+
+footer > p{
+    color: white;
+    padding-bottom: 0;
 }
