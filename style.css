@@ -1,5 +1,6 @@
 :root{
     --accent-colour: #b72270;
+    --backdrop-colour: white;
     --alternate-background-colour: #f2f2f2;
     --inset-padding: 10vw;
     --content-width-unit: 30em;
@@ -10,6 +11,11 @@
 
 html, body {
     margin: 0;
+    background-color: var(--accent-colour);
+}
+
+header, #content{
+    background-color: var(--backdrop-colour);
 }
 
 header, #content > .rowContainer, footer{
@@ -52,18 +58,17 @@ img{
     min-width: min( var(--content-width-unit), 100%);
 }
 
-nav{
+#navbar{
     display: flex;
     flex-direction: row;
     gap: 2em;
     padding-bottom: .4em;
     border-bottom: 1px var(--accent-colour) solid;
     margin: auto;
-    margin-bottom: 4em;
     overflow-x: scroll;
 }
 
-nav > a,  #reportsNav, #dropdown > a{
+#navbar > a,  #reportsNav, #dropdown > a{
     transition: .4s all;
     text-decoration: none;
     color: #666666e1;
@@ -71,7 +76,7 @@ nav > a,  #reportsNav, #dropdown > a{
     font-size: 1em;
 }
 
-nav > a:hover, #reportsNav:hover, #dropdown > a:hover{
+#navbar > a:hover, #reportsNav:hover, #dropdown > a:hover{
     color: var(--accent-colour);
 }
 
@@ -79,12 +84,13 @@ nav > a:hover, #reportsNav:hover, #dropdown > a:hover{
     padding: .5em;
 }
 
-nav > a.onpage{
+#navbar > a.onpage{
     color: var(--accent-colour);
 }
 
 #reportsNav{
     cursor: default;
+    position: relative;
 }
 
 #dropdown{
@@ -94,7 +100,9 @@ nav > a.onpage{
     width: fit-content;
     padding: 0.5em;
     background-color: rgba(255, 255, 255, 0.75);
-    box-shadow: 0 .4em .4em 0 rgba(0, 0, 0, 0.2)
+    box-shadow: 0 .4em .4em 0 rgba(0, 0, 0, 0.2);
+    top: 100%;
+    left: 0;
 }
 
 
@@ -196,6 +204,16 @@ p {
 .buttonLink:hover{
     background-color: var(--accent-colour);
     color: white;
+}
+
+.reportLink{
+    width: 8em;
+    height: 8em;
+    padding: .5em;
+    text-align: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
 }
 
 footer{
