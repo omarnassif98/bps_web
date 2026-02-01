@@ -1,8 +1,10 @@
 :root{
     --accent-colour: #b72270;
     --alternate-background-colour: #f2f2f2;
-    --inset-padding: 7.5vw;
+    --inset-padding: 10vw;
     --content-width-unit: 30em;
+    --img-height: 50em;
+    --row-element-gap: 2em;
     font-family: 'Space Grotesk',Helvetica,Arial,Lucida,sans-serif;
 }
 
@@ -15,6 +17,23 @@ header, #content > .rowContainer, footer{
     padding: 0 var(--inset-padding);
 }
 
+#aiButton{
+    transition: 0.4s all;
+    display: none;
+    position: fixed;
+    bottom: 2em;
+    right: 3em;
+    padding: 1em;
+    border-radius: 2em;
+    border: 1px solid var(--accent-colour);
+    background-color: white;
+}
+
+#aiButton:hover{
+    background-color: var(--accent-colour);
+    color: white;
+}
+
 #headerBar{
     display: flex;
     flex-direction: row;
@@ -25,6 +44,12 @@ header, #content > .rowContainer, footer{
 
 img{
     object-fit: contain;
+    max-width: 100%;
+}
+
+.imageFlaunt{
+    flex-grow: 2;
+    min-width: min( var(--content-width-unit), 100%);
 }
 
 nav{
@@ -38,19 +63,44 @@ nav{
     overflow-x: scroll;
 }
 
-nav > a{
+nav > a,  #reportsNav, #dropdown > a{
     transition: .4s all;
     text-decoration: none;
     color: #666666e1;
     font-family: Arial, Helvetica, sans-serif;
+    font-size: 1em;
 }
 
-nav > a:hover{
+nav > a:hover, #reportsNav:hover, #dropdown > a:hover{
     color: var(--accent-colour);
+}
+
+#dropdown > a{
+    padding: .5em;
 }
 
 nav > a.onpage{
     color: var(--accent-colour);
+}
+
+#reportsNav{
+    cursor: default;
+}
+
+#dropdown{
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    width: fit-content;
+    padding: 0.5em;
+    background-color: rgba(255, 255, 255, 0.75);
+    box-shadow: 0 .4em .4em 0 rgba(0, 0, 0, 0.2)
+}
+
+
+
+#reportsNav:hover #dropdown{
+    display: flex;
 }
 
 h1, h2{
@@ -61,11 +111,13 @@ h1, h2{
 
 h1{
     font-weight: 700;
+    font-size: 1.4em;
 }
 
 h2{
     font-weight: 400;
     padding-bottom: 1.5em;
+    font-size: 1.2em;
 }
 h3{
     font-size: 1.1em;
@@ -78,13 +130,6 @@ p {
     color: #666;
 }
 
-h1 {
-    font-size: 1.4em;
-}
-
-h2 {
-    font-size: 1.2em;
-}
 
 #content{
     display: flex;
@@ -97,9 +142,11 @@ h2 {
     padding-bottom: .2em;
     display: flex;
     flex-wrap: wrap;
+    justify-content: space-between;
+    gap: var(--row-element-gap);
 }
 
-.rowContainer:nth-of-type(even) {
+#content > .rowContainer:nth-of-type(even) {
     background-color: var(--alternate-background-colour);
 }
 
@@ -116,16 +163,22 @@ h2 {
     flex: 1;
 }
 
-#content > .rowContainer > .contentContainer {
+.clamp {
     max-width: var(--content-width-unit);
+}
+
+
+.contentDuo{
+    flex-basis: min(var(--content-width-unit), 100%);
 }
 
 .simpleFlex{
     display: flex;
 }
 
-button{
-    width: 10em;
+.buttonLink{
+    min-width: 6em;
+    width: fit-content;
     padding: .3em;
     border-radius: 1em;
     border: none;
@@ -135,9 +188,12 @@ button{
     font-size: .8em;
     cursor: pointer;
     transition: .4s all;
+    text-decoration: none;
+    text-align: center;
+    margin-bottom: 2em;
 }
 
-button:hover{
+.buttonLink:hover{
     background-color: var(--accent-colour);
     color: white;
 }
