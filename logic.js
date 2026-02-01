@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', () => {
   if (!aiButton) return;
 
   aiButton.addEventListener('click', () => {
-    alert('If you really expected a chatbot, re-evaluate your life choices');
+    alert('If you really expected to talk to a chatbot, re-evaluate your life choices');
     window.location.href = "/files/haha-you-look-hilarious.jpg"
     });
 aiButton.style.display = 'block';
