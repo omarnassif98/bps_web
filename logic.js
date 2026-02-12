@@ -1,4 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
+  const queryString = window.location.search;
+  const urlParams = new URLSearchParams(queryString);
   if(!urlParams.has('ai_mode')) return;
   const aiButton = document.getElementById('aiButton');
   if (!aiButton) return;
