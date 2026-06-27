@@ -169,6 +169,19 @@ p {
     padding-top: 2em;
 }
 
+.divider{
+    background-color: var(--accent-colour);
+    height: 1px;
+    border: none;
+    width: 80%;
+}
+
+.profilePic{
+    height: 10em;
+    width: 10em;
+    border-radius: 1.5em;
+}
+
 .contentContainer{
     font-size: 0.9rem;
     display: flex;
